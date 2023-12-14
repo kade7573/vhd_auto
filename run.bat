@@ -7,7 +7,7 @@ SET drive_label="TEMP"
 SET drive_letter="Q"
 SET /a size_GB = 1
 
-SET /a partition = 2
+SET /a partition_number = 2
 SET diskpart_script_path="%cd%\diskpart.txt"
 SET diskpart_log_path="%cd%\diskpart.log"
 
@@ -23,7 +23,7 @@ ECHO select vdisk file=%vhd_path% >> %diskpart_script_path%
 ECHO attach vdisk >> %diskpart_script_path%
 ECHO convert gpt >> %diskpart_script_path%
 ECHO create partition primary >> %diskpart_script_path%
-ECHO select partition %partition% >> %diskpart_script_path%
+ECHO select partition %partition_number% >> %diskpart_script_path%
 ECHO format fs=NTFS label=%drive_label% quick >> %diskpart_script_path%
 ECHO assign letter=%drive_letter% >> %diskpart_script_path%
 
