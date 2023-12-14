@@ -11,6 +11,7 @@ SET /a partition = 2
 SET diskpart_script_path="%cd%\diskpart.txt"
 SET diskpart_log_path="%cd%\diskpart.log"
 
+
 ::create diskpart script
 
 IF EXIST %diskpart_script_path% DEL %diskpart_script_path%
@@ -26,5 +27,7 @@ ECHO select partition %partition% >> %diskpart_script_path%
 ECHO format fs=NTFS label=%drive_label% quick >> %diskpart_script_path%
 ECHO assign letter=%drive_letter% >> %diskpart_script_path%
 
+
 ::run diskpart script
+
 diskpart /s %diskpart_script_path% > %diskpart_log_path%
