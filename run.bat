@@ -2,7 +2,7 @@
 
 ::settings
 
-SET vhd_path="%UserProfile%\Desktop\temp.vhdx"
+SET vhd_path="%cd%\temp.vhdx"
 SET drive_label="TEMP"
 SET drive_letter="Q"
 SET /a size_GB = 1
